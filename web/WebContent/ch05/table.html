@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" id="tbl">
+    </table>
+
+    <script>
+        let trTag = document.createElement("tr");
+        let tdTag = document.createElement("td");
+        let text = document.createTextNode("아이디:");
+        tdTag.appendChild(text); // <td>아이디</td>
+        trTag.appendChild(tdTag);
+        let tbTag = document.getElementById("tbl");
+        tbTag.appendChild(trTag); //<tr><td>아이디</tr></td>
+
+        let inpTag = document.createElement("input");
+        inpTag.setAttribute("name", "passwd");
+        tdTag = document.createElement("td");
+        tdTag.appendChild(inpTag);
+        trTag.appendChild(tdTag);
+
+        trTag = document.createElement("tr");
+        tdTag = document.createElement("td");
+        text = document.createTextNode("비밀번호:");
+        tdTag.appendChild(text);
+        trTag.appendChild(tdTag);
+        tbTag.appendChild(trTag);
+
+        inpTag = document.createElement("input");
+        inpTag.setAttribute("type", "password");
+        tdTag = document.createElement("td");
+        tdTag.appendChild(inpTag);
+        trTag.appendChild(tdTag);
+
+        let btn = document.createElement("button");
+        trTag = document.createElement("tr");
+        tdTag = document.createElement("td");
+        tdTag.setAttribute("colspan", "2");
+        tdTag.setAttribute("align", "center");
+        text = document.createTextNode("제출");
+        btn.appendChild(text);
+        tdTag.appendChild(btn);
+        trTag.appendChild(tdTag);
+        tbTag.appendChild(trTag);
+        
+        btn = document.createElement("button");       
+        text = document.createTextNode("취소");
+        btn.appendChild(text);
+        tdTag.appendChild(btn);
+    
+        
+
+
+    </script>
+</body>
+
+</html>

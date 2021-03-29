@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch05/03_submit2.html</title>
+</head>
+
+<body id="bdy">
+    <script>
+        let h2Tag, formTag, pTag, inputTag, text;
+        h2Tag=document.createElement("h2");              
+        text=document.createTextNode("입력 양식 데이터 전송 버튼");
+        h2Tag.appendChild(text);
+        document.getElementById("bdy");
+        bdy.appendChild(h2Tag);
+
+        formTag=document.createElement("form");       
+        formTag.setAttribute("action", "03_submit2.jsp");
+        formTag.setAttribute("method", "get");      
+        bdy.appendChild(formTag);
+
+        pTag=document.createElement("p");
+        text=document.createTextNode("이름 : ")
+        inputTag=document.createElement("input");
+        inputTag.setAttribute("name", "name");
+        pTag.appendChild(text);
+        pTag.appendChild(inputTag);
+        formTag.appendChild(pTag);
+        bdy.appendChild(formTag);
+
+        text=document.createTextNode("학과 : ")
+        inputTag=document.createElement("input");
+        inputTag.setAttribute("name", "major");
+        pTag=document.createElement("p");
+        pTag.appendChild(text);
+        pTag.appendChild(inputTag);
+        formTag.appendChild(pTag);
+        bdy.appendChild(formTag);
+
+        inputTag=document.createElement("input");
+        inputTag.setAttribute("type", "submit");
+        inputTag.setAttribute("value", "전송");
+        formTag.appendChild(inputTag);
+        bdy.appendChild(formTag);
+
+    </script>
+</body>
+
+</html>
