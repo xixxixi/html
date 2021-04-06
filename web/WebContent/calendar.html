@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td:nth-of-type(1) {
+            background-color: rgb(255, 144, 144);
+        }
+
+        td:nth-of-type(7) {
+            background-color: skyblue;
+        }
+    </style>
+    <script src="javascript.cal.js"></script>
+</head>
+
+<body>
+
+    <script>
+        // createCal();
+        createCalendar(2021, 3);
+        createCalendar(2021, 4);
+
+        function createCalendar(year, month) {
+            let today = new Date(year, month - 1); // 월의 1
+            let thisYear = today.getFullYear(); // 2021년
+            let thisMonth = today.getMonth(); // 3 = 4월. 0부터 시작하기 때문
+            let thisDate = today.getDate(); // 6일
+            let thisDay = today.getDay(); // 0:일, 1:월, 2:화, 3: 수. 4: 목, 5:금, 6:토
+            console.log(thisYear);
+            console.log(thisMonth);
+            console.log(thisDate);
+            console.log(thisDay);
+
+            let lastDate = new Date(thisYear, thisMonth + 1, 0).getDate(); // 이번 달의 마지막 날
+            let firstDate = new Date(thisYear, thisMonth, 1);
+            let firstDay = firstDate.getDay(); // 이번달 1의 요일정보
+            let days = ['일', '월', '화', '수', '목', '금', '토'];
+
+            let calendarTag = '<table border="1"><tr>';
+            calendarTag += '<cation>' + year + '년' + '&nbsp' + month + '월</caption>';
+            for (let i = 0; i < 7; i++) {
+                calendarTag += '<th>' + days[i] + '</th>';
+            }
+            calendarTag += '</tr><tr>';
+            for (let i = 0; i < firstDay; i++) {
+                calendarTag += '<td></td>';
+            }
+            for (let i = 1; i <= lastDate; i++) {
+                if (i % 7 == (7 - firstDay)) { // 나머지가 3이 될 때 라인 바꾸기
+                    calendarTag += '<td>' + i + '</td></tr><tr>';
+                } else if (i == thisDate) {
+                    calendarTag += '<td style="background-color: yellow;">' + i + '</td>';
+                } else {
+                    calendarTag += '<td>' + i + '</td>';
+                }
+            }
+            calendarTag += '</tr><table>';
+            document.write(calendarTag);
+        }
+    </script>
+</body>
+
+</html>

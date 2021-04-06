@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 10;
+        var b = 20;
+        var c = 10;
+        var f = "20";
+        var result;
+
+        result = a>b; // false
+        document.write(result, "<br>");
+        result = a < b; // true
+        document.write(result, "<br>");
+        result = a <=b; // ture
+        document.write(result, "<br>");
+        result = b == f; // true 자료형, 숫자형, 문자형 상관하지 않고 표기된 숫자만 일치하면 true 반환
+        document.write(result, "<br>");
+        result = a != b; // true
+        document.write(result, "<br>");
+        result = b === f; // false 숫자와 자료형도 일치해야만 true 반환
+        document.write(result, "<br>");
+    </script>
+</body>
+</html>
