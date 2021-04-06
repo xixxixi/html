@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin-bottom: 1.5%;
+            margin-left: 1.5%;
+        }
+
+        .ap1 {
+            position: absolute;
+            left: 150px;
+            top: 70px;
+        }
+
+        .ap2 {
+            position: absolute;
+            left: 150px;
+            top: 105px;
+        }
+
+        .ap3 {
+            position: absolute;
+            left: 150px;
+            top: 140px;
+        }
+
+        .ap4 {
+            position: absolute;
+            left: 150px;
+            top: 175px;
+        }
+
+        .ap5 {
+            position: absolute;
+            left: 150px;
+            top: 210px;
+        }
+
+        .ap6 {
+            position: absolute;
+            left: 150px;
+            top: 245px;
+        }
+
+        .ap7 {
+            position: absolute;
+            left: 150px;
+            top: 281px;
+        }
+
+        .ap8 {
+            position: absolute;
+            left: 150px;
+            top: 500px;
+        }
+
+        .ap9 {
+            position: absolute;
+            top: 500px;
+        }
+        .ap10{
+            position: absolute; left: 150px; top: 377px;
+        }
+        .ap11{
+            position: absolute; top: 380px;
+        }
+        .ap12{
+            position: absolute; left: 540px; top:327px;
+        }
+        .ap13{
+            position: absolute; left: 440px; top: 426px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2><span style="margin-left: 1.5%;">회원정보</span><span style="color: rgb(160, 226, 226);">&nbsp;(필수)</span></h2>
+    <div>
+        아이디
+    </div>
+    <div class="ap1">
+        <input type="text" name="id">
+        &nbsp&nbsp&nbsp<button type="button" style="background-color: rgb(65, 196, 174); height: 30px; border-radius: 3px;" onclick="alert('중복확인')"><span
+                style="color: white;">아이디중복확인</span></button>
+    </div>
+    <div>
+        비밀번호
+    </div>
+    <div class="ap2">
+        <input type="password"> &nbsp&nbsp <span style="color: gray; font-size: small;">8~20자리의 영문, 숫자 조합(영문, 숫자, 특수 기호
+            조합을 권장합니다)</span>
+    </div>
+    <div>
+        비밀번호 확인<span style="color: red;"> *</span>
+    </div>
+    <div class="ap3">
+        <input type="password">
+    </div>
+    <div>
+        이름<span style="color: red;"> *</span>
+    </div>
+    <div class="ap4"><input type="text">
+    </div>
+    <div>
+        성별<span style="color: red;"> *</span>
+    </div>
+    <div class="ap5">
+        <input type="radio"> 남성 <input type="radio"> 여성
+    </div>
+    <div>
+        생년월일<span style="color: red;"> *</span>
+    </div>
+    <div class="ap6"> <select>
+            <option>2012</option>
+        </select>
+        <select>
+            <option>04</option>
+        </select>
+        <select>
+            <option>04</option>
+        </select>
+        <input type="radio"> 양력 <input type="radio"> 음력
+    </div>
+    <div>
+        이메일<span style="color: red;"> *</span>
+    </div>
+    <div class="ap7"><input type="text"> @ <input type="text"> <select>
+            <option>직접입력</option>
+        </select><br>
+        <span style="color: gray; font-size: small;">이메일 수신동의 시, 신상품/할인혜택/이벤트 등의 정보를 받아보실 수 있습니다<br>
+        수신동의 거부 시에도 기본서비스(주문배송 메일)는 발송됩니다.</span>        
+    </div>
+    <div class="ap12">
+        <span style="font-size: small;"><input type="radio"> 예 <input type="radio"> 아니오</span>
+    </div>
+    <div class="ap11">
+        휴대전화<span style="color: red;"> *</span>
+    </div>
+    <div class="ap13">
+        <span style="font-size: small;"><input type="radio"> 예 <input type="radio"> 아니오</span>
+    </div>
+    <div class="ap10">
+        <input type="text" style="width: 70px; height: 20px;"> - <input type="text" style="width: 70px; height: 20px;"> - <input type="text" style="width: 70px; height: 20px;">
+        <br><span style="color: gray; font-size: small;">할인혜택과 이벤트 등의 소식 안내를 SMS로 받으실 수 있습니다.<br>수신동의 거부 시에도 기본서비스는 발송됩니다.</span>
+    </div>
+    <div class="ap9">
+        관심 브랜드<span style="color: red;"> *</span>
+    </div>
+    <div class="ap8">
+        <input type="checkbox"> 한빛미디어 <input type="checkbox"> 한빛아카데미 <input type="checkbox"> 한빛비즈 <br>
+        <input type="checkbox"> 한빛라이프 <input type="checkbox"> 리얼타임 eBook <input type="checkbox"> MAKE <br>
+        <input type="checkbox"> 한빛에듀
+
+    </div>
+</body>
+
+</html>
