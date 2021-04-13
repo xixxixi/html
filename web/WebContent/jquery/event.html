@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $.ajax({
+            url: '../MOCK_DATA.json',
+            success: function (result) {
+                let objs = $(result).map(function (idx, obj) {
+                    let person = {};
+                    person.name = obj.first_name;
+                    person.email = obj.email;
+                    return person;
+                    // return obj.first_name;
+                }).filter(function (idx, obj) {
+                    return idx < 5;
+                });
+                console.log(objs);
+
+                let tbl = $('<table />');
+                tbl.attr('border', '1');
+                $(objs).each(function (idx, obj) { // each는 매개값을 소지만 해서 return 값이 없음
+                    let trTag = $('<tr />');
+                    trTag.mouseover(function () {
+                        $(this).css('background-color', 'yellow');
+                    });
+                    trTag.on({
+                        'mouseout': function () {
+                            $(this).css('background-color', '');
+                        },
+                        'click': function () {
+                            console.log($(this).children().eq(0)
+                                .html()); // this는 trTag를 의미
+                        }
+                    }); // {이벤트이름, 핸들러}
+                    let tdTag = $('<td />');
+                    let ips = $('<input />').attr('type', 'checkbox');
+                    trTag.append(tdTag.append(ips));
+                    for (field in obj) {
+                        let tdTag = $('<td />').html(obj[field]); // td 태그 안에 obj[field] 값을 담아줌
+                        trTag.append(tdTag);
+                    }
+                    tbl.append(trTag);
+                });
+                $('body').append(tbl);
+
+                $('body').append($('<button />').html('삭제').click(delChecked));
+
+                // let objf = $(objs).filter(function (idx, obj) { // filter : 가지고 온 요소에서 충족하는 조건만 출력
+                //     return idx < 5;
+                // });
+                // console.log(objf);
+            }
+        });
+
+        function delChecked() {
+            console.log($(this));
+            // $('td>input[type="checkbox"]:checked')
+            $('td>input[type=checkbox]') //.is(':checked')
+                .parentsUntil('table') //.remove();
+                .css('color', 'red')
+                .remove();
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn">클릭</button>
+    <button id="bton">Click</button><br>
+    <button id="btnOn">클릭</button>
+    <button id="buttonOn">Click</button>
+    <script>
+        // jQuery
+        $('#btnOn').click(function () {
+            console.log('클릭되었습니다.');
+        });
+        $('#btnOn').mouseover(function () {
+            $(this).css('background-color', 'yellow');
+        })
+        $('#btnOn').mouseout(function () {
+            $(this).css('background-color', '');
+        })
+
+        // 자바스크립트
+        let btn = document.getElementById('btn');
+        btn.onclick = function () {
+            alert('클릭버튼이 눌렸습니다!');
+        }
+        btn.onmouseover = function () {
+            this.style.backgroundColor = 'yellow';
+        }
+        btn.onmouseout = function () {
+            this.style.backgroundColor = '';
+        }
+
+        $('#buttonOn').on('click', function () {
+            console.log('클릭되었습니다.');
+        });
+        $('#buttonOn').on({
+            'mouseover': function () {
+                $(this).css('background-color', 'yellow');
+            },
+            'mouseout': function () {
+                $(this).css('background-color', '');
+            }
+        });
+
+
+        let bton = document.getElementById('bton');
+        bton.addEventListener('click', function () {
+            alert('클릭버튼이 눌렸습니다!');
+        });
+        bton.addEventListener('mouseover', function () {
+            this.style.backgroundColor = 'yellow';
+        })
+        bton.addEventListener('mouseout', function () {
+            this.style.backgroundColor = '';
+        })
+    </script>
+</body>
+
+</html>

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         var a = 10;
@@ -13,24 +15,25 @@
         var m = 30;
         var n = 40;
 
-        var result; 
+        var result;
         // || 연산자는 피연산자 중 true가 한 개라도 포함되어 있으면 true를 반환
         // && 연산자는 피연산자 중 false가 한 개라도 포함되어 있으면 false를 반환
         // ! 연산자는 피연산자가 false면 true를 반환
-        result = a>b || b>= m || m>n; // false || false || false
+        result = a > b || b >= m || m > n; // false || false || false
         document.write(result, "<br>"); // false
 
-        result = a>b || b>= m || m<=n; // false || false || true
+        result = a > b || b >= m || m <= n; // false || false || true
         document.write(result, "<br>"); // ture
 
         result = a <= b && b >= m && m <= n; // true && false && ture
         document.write(result, "<br>"); // false
- 
+
         result = a <= b && b <= m && m <= n; // ture && true && true
         document.write(result, "<br>"); // true
 
-        result = !(a>b); // !false를 계산
+        result = !(a > b); // !false를 계산
         document.write(result, "<br>"); // true
     </script>
 </body>
+
 </html>
